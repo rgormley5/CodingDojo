@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>While You Wait</title>
+    <script>
+    var daysUntilMyBirthday = 60;
+    console.log(daysUntilMyBirthday);
+
+    for (var i = daysUntilMyBirthday; i >= 0; i--) {
+        if (i > 30) {
+            console.log("sad");
+        }
+        else if (i < 30 && i > 5) {
+            console.log("excited!");
+        }
+        else if (i <= 5 && i != 0) {
+            console.log(i, "DAYS UNTIL MY BIRTHDAY!")
+        }
+        else if (i == 0) {
+            console.log("party!");
+        }
+    }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

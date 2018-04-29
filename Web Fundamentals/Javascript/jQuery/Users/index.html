@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Users</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th id="first_name_th">First Name</th>
+                <th>Last Name</th>
+                <th>Email Address</th>
+                <th>Contact #</th>
+            </tr>
+        </thead>
+    </table>
+
+    <div class="form_container">
+        <form action="" method="">
+            <h1>Add User</h1>
+
+            <label id="first_name_label" for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name_input" placeholder="First Name">
+
+            <label id="last_name_label" for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name_input">
+
+            <label id="email_label" for="email">Email:</label>
+            <input id="email_input" type="email" name="email">
+
+            <label id="contact_label" for="contact">Contact No.:</label>
+            <input id="contact_input" type="tel" name="tel" id="contact">
+
+            <input type="submit" name="submit" id="submit" value="Add User">
+
+        </form>
+    </div>
+
+</body>
+</html>

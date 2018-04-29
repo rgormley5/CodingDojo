@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+table {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+th {
+    padding-right: 50px;
+}
+.form_container {
+    width: 700px;
+}
+h1 {
+    border-bottom: 2px solid grey;
+}
+/* .question_container {
+    margin-left: 100px;
+} */
+label {
+    /* margin-left: 100px; */
+    display: block;
+}

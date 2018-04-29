@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Range Print</title>
+    <script>
+    function printRange(start, end, skip){
+        var sum = 0;
+        for (var i = start-skip; i < end - 2; i++) {
+            if ((i + skip) % skip == 0) {
+                sum = i + skip;
+                console.log("sum is ", sum);
+            }
+
+            // console.log("i is ", i)
+            // console.log("skip is ", skip)
+            // console.log("sum is ", sum);
+        }
+    }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

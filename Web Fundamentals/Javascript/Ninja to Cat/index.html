@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ninja to Cat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    // $(document).ready(function(){
+    //     $('img').click(function(){
+    //         console.log('data-alt-src value is', $(this).attr('data-alt-src'));
+    //     });
+    // });
+    // $(document).ready(function(){
+    //     $('img').click(function(){
+    //         $('this').toggle('data-alt-src');
+    //     });
+    // });
+    $(document).ready(function(){
+        $('#one').click(function(){
+            $(this).attr("src", "ninja0.png");
+        });
+    });
+    $(document).ready(function(){
+        $('#two').click(function(){
+            $(this).attr("src", "ninja1.png");
+        });
+    });
+    $(document).ready(function(){
+        $('#three').click(function(){
+            $(this).attr("src", "ninja2.png");
+        });
+    });
+    $(document).ready(function(){
+        $('#four').click(function(){
+            $(this).attr("src", "ninja3.png");
+        });
+    });
+    $(document).ready(function(){
+        $('#five').click(function(){
+            $(this).attr("src", "ninja4.png");
+        });
+    });
+    
+    </script>
+</head>
+<body>
+
+    <div>
+        <img id="one" src="cat0.png" data-alt-src="ninja0.png" alt="cat0 or ninja0">
+        <img id="two" src="cat1.png" data-alt-src="ninja1.png" alt="cat1 or ninja1">
+        <img id="three" src="cat2.png" data-alt-src="ninja2.png" alt="cat2 or ninja2">
+        <img id="four" src="cat3.png" data-alt-src="ninja3.png" alt="cat3 or ninja3">
+        <img id="five" src="cat4.png" data-alt-src="ninja4.png" alt="cat4 or ninja4">
+    </div>
+
+    
+</body>
+</html>

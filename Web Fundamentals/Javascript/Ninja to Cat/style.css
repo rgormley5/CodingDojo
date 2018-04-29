@@ -1,0 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.selected {
+    display: none;
+}
+img {
+    margin: 10px;
+    display: block;
+}

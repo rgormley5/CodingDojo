@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Random Chance</title>
+    <script>
+        function chance(quarter){
+
+            // iterate through quarter number of times (if they have quaters, keep interating)
+            for (var i = 0; i < quarter; i++) {
+                var random = Math.floor(Math.random()*100);
+                console.log(random);
+                quarter = quarter - 1;
+
+                // if they lose
+                if (random < 70) {
+                    continue;
+                }
+                
+                // if they win
+                else if (random >= 70) {
+                    // return winnings (random number between 50 - 100) to current number of quarters
+                    var win = Math.trunc(Math.random()*50) + 51;
+                    console.log("win!", win);
+                    var total = quarter + win;
+                    return total;
+                }
+                // return 0 if user doesn't win
+                else {
+                    console.log("didn't win");
+                    return 0;
+                }
+            }
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

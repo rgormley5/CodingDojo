@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery Functions</title>
+    <link rel="stylesheet" type="text/css" href="jQuery.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+    <script>
+        $(document).ready(function() {
+            $("#click_button").click(function(){
+                alert('hello');
+            })
+        });
+        $(document).ready(function() {
+            $("#hide_button").click(function(){
+                $("#text1").hide("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#show_button").click(function(){
+                $("#text1").show("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#toggle_button").click(function(){
+                $("#text2").toggle("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#slideDown_button").click(function(){
+                $("#text3").slideDown('slow');
+            });
+        });
+        $(document).ready(function() {
+            $("#slideUp_button").click(function(){
+                $("#text3").slideUp("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#slideToggle_button").click(function(){
+                $("#text3").slideToggle("slow");
+            });
+        });
+        $(document).ready(function(){
+            $("#fadeIn_button").click(function() {
+                $("#text4").fadeIn("slow");
+            });
+        });
+        $(document).ready(function(){
+            $('#fadeOut_button').click(function(){
+                $('#text4').fadeOut("slow");
+            });
+        });
+        $(document).ready(function(){
+            $("#addClass_button").click(function(){
+                $("#text5").addClass("selected");
+            });
+        });
+        $(document).ready(function(){
+            $("#before_button").click(function(){
+                $("h3").before("<p>Added a p</p>");
+            });
+        });
+        $(document).ready(function(){
+            $("#after_button").click(function(){
+                $("p").after("<p>Added After</p>");
+            });
+        });
+        $(document).ready(function(){
+            $("#append_button").click(function(){
+                $("#text7").append("APPENDING!");
+            });
+        });
+        $(document).ready(function(){
+            $("#htmlsetter_button").click(function(){
+                $('#text8').html("<p>New Text as a setter!</p>")
+            });
+        });
+        // seems to work if you run jQuery command in console, but not here
+        $(document).ready(function(){
+            console.log($("#htmlgetter_button").html());
+        });
+        $(document).ready(function(){
+            var title = $('#text9').attr('title');
+            $('')
+        })
+        $(document).ready(function(){
+            $('.button_1').click(function(){
+                var text = $(this).text();
+                $('#input').val(text);
+            });
+        });
+        $(document).ready(function(){
+            $('#texting').click(function(){
+                $('#text10').text("this is new text");
+            });
+        });
+        $(document).ready(function(){
+            alert( $('body').data() );
+        })
+
+
+
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <input id="click_button" class="button" type="submit" value=".click">
+            <div class="text">
+                <h3>.click to alert hello</h3>
+                <p>some text</p>
+            </div>
+        </div>
+        <div class="box">
+            <input id="hide_button" class="button" type="submit" value=".hide">
+            <input id="show_button" class="button" type="submit" value=".show">
+            <div class="text">
+                <h3>using .click and .hide and .show</h3>
+                <p id="text1">click the .hide button to hide this text, and .show to show after it is hidden</p>
+            </div>
+        </div>
+        <div class="box">
+            <input id="toggle_button" class="button" type="submit" value=".toggle">
+            <div class="text">
+                <h3>using .toggle</h3>
+                <p id="text2">.toggle similar to .hide and .show in one</p>
+            </div>
+        </div>
+        <div class="box">
+            <input id="slideDown_button" class="button" type="submit" value=".slideDown">
+            <input id="slideUp_button" class="button" type="submit" value=".slideUp">
+            <input id="slideToggle_button" class="button" type="submit" value=".slideToggle">
+            <div class="text">
+                <h3>using .slideDown, .slideUp, .slideToggle</h3>
+                <p id="text3">.slideDown, .slideUp, .slideToggle</p>
+            </div>
+        </div>
+        <div class="box">
+            <input id="fadeIn_button" class="button" type="submit" value=".fadeIn">
+            <input id="fadeOut_button" class="button" type="submit" value=".fadeOut">
+            <div class="text">
+                <h3>using .fadeIn and .fadeOut</h3>
+                <p id="text4">.fadeIn and .fadeOut</p>
+            </div>
+        </div>
+        <div class="box">
+            <input id="addClass_button" class="button" type="submit" value=".addClass">
+                <div class="text">
+                    <h3>using .addClass</h3>
+                    <p id="text5">click .addClass to change text color</p>
+                </div>
+        </div>
+        <div class="box">
+            <input id="before_button" class="button" type="submit" value=".before">
+            <input id="after_button" class="button" type="submit" value=".after">
+            <div class="text">
+                <h3>using .before and .after</h3>
+                <p id="text6">click .before/.after buttons to add text before/after each header/p</p>
+            </div>
+        </div>
+        <div class="box">
+            <input id="append_button" class="button" type="submit" value=".append">
+            <div class="text">
+                <h3>using .append</h3>
+                <p id="text7">click .append</p>
+            </div>
+        </div>
+        <div class="box">
+            <input id="htmlsetter_button" class="button" type="submit" value=".htmlsetter">
+            <div class="text">
+                <h3>using .html as a setter</h3>
+                <p id="text8">click button</p>
+            </div>
+        </div>
+        <div class="box">
+            <input id="htmlgetter_button" class="button" type="submit" value=".htmlgetter">
+            <div class="text">
+                <h3>using .html as a getter</h3>
+                <p id="text8">click button, return htmlgetter variable in console</p>
+            </div>
+        </div>
+        <div class="box">
+            <input id="attr_button" class="checkbox" type="checkbox" checked="checked">
+            <label for="attr_button">Check Me</label>
+            <div class="text">
+                <h3>using .attr</h3>
+                <!-- <p id="text9">click checkmark this is a <span id="title">big fat</span> disnoaur,</p> -->
+            </div>
+        </div>
+        <div class="box">
+            <input id="input" type="text" value="click a button">
+            <div class="text">
+                <h3>using .val</h3>
+                <p id="text9">click</p>
+                <button class="button_1">yes</button>
+                <button class="button_1">no</button>
+            </div>
+        </div>
+        <div class="box">
+            <input id="texting" class="button" type="submit" value=".text">
+            <div class="text">
+                <h3>using .html as a getter</h3>
+                <p id="text10">click button, return htmlgetter variable in console</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
