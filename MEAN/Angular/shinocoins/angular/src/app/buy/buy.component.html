@@ -1,0 +1,9 @@
+<h2>Buy ShintoCoins</h2>
+
+<p>Current ShintoCoin Value: {{ value }} </p>
+<p>Number of ShintoCoins Owned: {{ coins }} </p>
+
+<form (submit)="submitBuy(numfield.value)" >
+  <input #numfield type="number" placeholder="Number" name="number">
+  <input type="submit" value="Buy">
+</form>

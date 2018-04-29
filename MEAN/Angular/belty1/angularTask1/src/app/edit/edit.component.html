@@ -1,0 +1,21 @@
+<h3>Edit this pet</h3>
+
+<p *ngIf="errors" style="color: red" > {{ error_message }} </p>
+
+<form (submit)="onSubmit()" >
+    <label>Pet name:</label>
+    <input type="text" name="pet_name" [(ngModel)]="editAnimal.pet_name" ><br>
+    <label>Pet type:</label>
+    <input type="text" name="pet_type" [(ngModel)]="editAnimal.pet_type" ><br>
+    <label>Description:</label>
+    <input type="text" name="pet_description" [(ngModel)]="editAnimal.pet_description" ><br>
+    <label>Skills:</label><br>
+    <label>Skill 1:</label>
+    <input type="text" name="pet_skill_1" [(ngModel)]="editAnimal.pet_skill_1" ><br>
+    <label>Skill 2:</label>
+    <input type="text" name="pet_skill_2" [(ngModel)]="editAnimal.pet_skill_2" ><br>
+    <label>Skill 3:</label>
+    <input type="text" name="pet_skill_3" [(ngModel)]="editAnimal.pet_skill_3" ><br>
+    <input type="submit" value="Edit pet">
+    <button (click)="cancelButtonClicked()" >Cancel</button>
+  </form>

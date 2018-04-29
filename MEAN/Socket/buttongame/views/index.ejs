@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var socket = io.connect();
+            $('#ebtn').click(function() {
+                socket.emit('button_clicked')
+            });
+            socket.on('number_is', function(data) {
+                console.log('response from server: ' + data.response.number);
+                // let update_note = '<span>data.response.number</span>';
+                let update_note = data.response.number;
+                document.getElementById('note').innerHTML = update_note;
+            });
+        })
+    
+    </script>
+    <title>The great button game</title>
+</head>
+<body>
+    
+    <h3>The button has been pushed <span id="note"></span> times(s)</h3>
+
+    <p>Push the button to update the count!</p>
+    <button id="ebtn">Push the epic button</button>
+
+</body>
+</html>

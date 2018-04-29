@@ -1,0 +1,22 @@
+<h2>Browse the Ledger</h2>
+
+<p>Here you can etc.</p>
+
+<h3>ShintoCoin Ledger</h3>
+<table>
+  <tr>
+    <td>Action</td>
+    <td>Amount</td>
+    <td>Value</td>
+  </tr>
+  <tr *ngFor="let tran of trans">
+    <td> {{ tran.action }} </td>
+    <td> {{ tran.amount }} </td>
+    <td> {{ tran.value }} </td>
+    <form (submit)="submitID(tranid.value)">
+      <input type="submit" value="Details">
+      <input #tranid type="hidden" value="{{ tran.id }}">
+    </form>
+    <td> {{ tran.id }} </td>
+  </tr>
+</table>

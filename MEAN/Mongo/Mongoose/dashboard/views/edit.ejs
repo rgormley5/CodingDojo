@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Duck</title>
+</head>
+<body>
+
+    <h3>Edit Duck</h3>
+    
+    <a href="/"><button>Home</button></a>
+    <form action="/process_delete" method="POST"><input type="hidden" name="id" value="<%=duck[0].id%>"><input type="submit" value="delete"></form>
+
+    <form action="/process_edit" method="POST">
+        Name: <input type="text" placeholder="<%= duck[0].name %>" name="name">
+        Skill: <select name="skill">
+                <option id="captain" value="captain">Captain</option>
+                <option id="scout" value="scout">Scout</option>
+                <option id="scientist" value="scientist">Scientist</option>
+                <option id="healer" value="healer">Healer</option>
+                <option id="diplomat" value="diplomat">Diplomat</option>
+                <option id="assassin" value="assassin">Assassin</option>
+            </select>
+        <input type="hidden" name="id" value="<%= duck[0].id %>">
+        <input type="submit" value="Make Changes">
+    </form>
+
+</body>
+</html>

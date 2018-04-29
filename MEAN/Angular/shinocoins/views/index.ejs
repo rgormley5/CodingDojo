@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Great Number Game</title>
+</head>
+<body>
+    <h3>Welcome to the Great Number Game!</h3>
+    <p>I am thinking of a number between 1 and 10</p>
+    <p>Take a guess!</p>
+    <form action="/process_form" method="post">
+        <input type="text" name="guess">
+        <input type="submit" value="Submit">
+    </form>
+    <p>number is: <%= object.myNumber %></p>
+    <p>message: <%= object.myMessage %></p>
+</body>
+</html>

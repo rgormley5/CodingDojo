@@ -1,0 +1,9 @@
+<h2>Mine ShintoCoins</h2>
+
+<p>Question: {{ question }} </p>
+
+<form (submit)="submitInput()" >
+  <p> {{ answer | json }} </p>
+  <input type="text" name="input" placeholder="Number" [(ngModel)] = answer >
+  <input type="submit" value="Mine">
+</form>

@@ -1,0 +1,23 @@
+<a [routerLink]="['/home']" >Home</a>
+<button (click)="addQuoteClicked()" >Add a Quote</button>
+
+<h3>Quotes by {{ author }} </h3>
+
+<table>
+  <tr>
+    <td>Quote</td>
+    <td>Votes</td>
+    <td>Actions Available</td>
+  </tr>
+  <tr *ngFor="let quote of quotes" >
+    <!-- sort quotes by rank > sort in quotesArr -->
+    <td> {{ quote['quote'] }} </td>
+    <td> {{ rank }} </td>
+    <td>
+      <button (click)="voteUpClicked( quote['_id'] )" >Vote Up</button>
+      <button (click)="voteDownClicked( quote['_id'] )" >Vote Down</button>
+      <button (click)="deleteClicked( quote['_id'] )" >Delete Quote</button>
+    </td>
+    <td> {{ quote['_id'] }} </td>
+  </tr>
+</table>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="stylesheet/css" href="/static/style_new.css">
+    <title>New Duck</title>
+</head>
+<body>
+
+    <h3>Add a Duck</h3>
+    
+    <form action="/process_new", method="post">
+        Name: <input type="text" name="name">
+        Skill: <select name="skill">
+            <option id="captain" value="captain">Captain</option>
+            <option id="scout" value="scout">Scout</option>
+            <option id="scientist" value="scientist">Scientist</option>
+            <option id="healer" value="healer">Healer</option>
+            <option id="diplomat" value="diplomat">Diplomat</option>
+            <option id="assassin" value="assassin">Assassin</option>
+        </select>
+        <input type="submit" value="Create new duck">
+    </form>
+
+    <a href="/"><button>Home</button></a>
+
+</body>
+</html>

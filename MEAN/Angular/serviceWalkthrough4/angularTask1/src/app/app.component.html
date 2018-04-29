@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <button [routerLink]="['alpha']">Load Alpha</button>
+  <button [routerLink]="['beta']">Load Beta</button>
+  <button [routerLink]="['gamma']">Load Gamma</button>
+  
+  <router-outlet></router-outlet>
+
+  <app-alpha></app-alpha>
+  <app-beta></app-beta>
+
+  <div>
+    <button (click)="getTasksFromService()">Get all tasks</button>
+    <p *ngFor="let task of tasks"> {{ task.title }} - {{ task.description }} </p>
+  </div>
+
+  <form (submit)="onSubmit()" >
+    <p>{{ newTask | json }}</p>
+    <label>
+      Task title:
+      <input type="text" name="newTask.title" [(ngModel)] = "newTask.title">
+    </label>
+    <label>Task description:
+      <input type="text" name="newTask.description" [(ngModel)] = "newTask.description">
+    </label>
+    <input type="submit" value="Create Task">
+  </form>
+
+</div>
+
+

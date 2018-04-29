@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <button (click)="button1Clicked()">Click to get all tasks</button>
+  <h3>tasks is: {{ tasks }}</h3>
+
+  Enter task ID here: <input #id type="text" name="id">
+  <button (click)="button2Clicked(id.value)" >Click to get one task</button>
+
+</div>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Go Ducks</title>
+</head>
+<body>
+
+    <h3>Home</h3>
+    
+    <a href="/duck/new"><button>Add a New Duck!!</button></a>
+
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Skill</td>
+        </tr>
+        <% for (let duck in ducks) { %>
+        <tr>
+            <td> <%= ducks[duck].id %> </td>
+            <td> <%= ducks[duck].name %> </td>
+            <td> <%= ducks[duck].skill %> </td>
+            <td> <a href="/duck/id/<%=ducks[duck].id%>"><button>Show</button></a> <a href="/duck/edit/<%=ducks[duck].id%>"><button>Edit</button></a> <form action="/process_delete" method="POST"><input type="hidden" name="id" value="<%=ducks[duck].id%>"><input type="submit" value="delete"></form> </td>
+        </tr>
+        <% } %>
+    </table>
+
+</body>
+</html>

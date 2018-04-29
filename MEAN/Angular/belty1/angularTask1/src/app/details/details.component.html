@@ -1,0 +1,13 @@
+<a [routerLink]="['/home']" >Home</a>
+
+<h3>Details about {{ animal['pet_name'] }} </h3>
+
+Pet type: {{ animal['pet_type'] }} <br>
+Description: {{ animal['pet_description'] }} <br>
+Skills: {{ animal['pet_skill_1'] }} <br>
+{{ animal['pet_skill_2'] }} <br>
+{{ animal['pet_skill_3'] }} <br>
+Likes: {{ animal['likes'] }} <br>
+
+<button [disabled]='' (click)="likeClicked()" >Like this pet</button>
+<button (click)="adoptClicked()" >Adopt this pet</button>
