@@ -1,0 +1,23 @@
+KeyError: 'user'
+fix - add a user
+
+OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'wrong'@'localhost' (using password: YES)") (Background on this error at: http://sqlalche.me/e/e3q8)
+
+fix: input correct user (‘root’)
+
+OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)") (Background on this error at: http://sqlalche.me/e/e3q8)
+
+fix: input correct password (‘root’)
+
+This site can’t be reached
+localhost refused to connect.
+Search Google for localhost 5000
+ERR_CONNECTION_REFUSED
+
+fix: enter correct database (‘db’)
+
+localhost refused to connect.
+Search Google for localhost 5000
+ERR_CONNECTION_REFUSED
+
+fix: enter correct port (‘3306’)

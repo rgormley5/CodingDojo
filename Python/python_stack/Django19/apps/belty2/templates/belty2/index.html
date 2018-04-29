@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login/Registration</title>
+</head>
+<body>
+
+    <h2>Welcome!</h2>
+    
+    <h2>Registration</h2>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li style="color:red" {% if message.tags %} class="{{ message.tags }}" {% endif %} > {{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form action="/registration" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="registration">
+        Name: <input type="text" name="name">
+        Username: <input type="text" name="username">
+        Password: <input type="text" name="password">
+        Confirm: <input type="text" name="confirm">
+        Date Hired: <input type="date" name="date">
+        <input type="submit" value="Register">
+    </form>
+
+    <h2>Login</h2>
+    <form action="/login" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="login">
+        Username: <input type="text" name="username">
+        Password: <input type="text" name="login_password">
+        <input type="submit" value="Login">
+    </form>
+
+</body>
+</html>

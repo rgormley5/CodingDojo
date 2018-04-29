@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="{{url_for ('static', filename = 'css/rg_style.css') }}">
+</head>
+<body>
+    <h2>Welcome to the Great Number Game!</h2>
+    <h3>I am thinking of a number between 1 and 10</h3>
+    <h3>Take a guess</h3>
+
+    <form action="/guess" method="post">
+        <input type="text" name="guess">
+        <input type="submit" name="submit">
+    </form>
+
+    <form action="/reset" method="post">
+        <input type="submit" name="reset" value="reset">
+    </form>
+
+    <!-- <a href="/reset"><button>reset</button></a> -->
+
+    <p>number: {{ number }}</p>
+
+    {% with "number" in session %}
+    <p>{{ text_html }}</p>
+    {% endif %}
+
+</body>
+</html>

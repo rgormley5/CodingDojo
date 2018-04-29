@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Book and Review</title>
+</head>
+<body>
+
+    <h3>Book Title: {{ book.title }} </h3>
+    <h4>Author: {{ book.title }} </h4>
+
+    <h3>Reviews: 
+        {% for i in all_reviews %}
+            {% if i.book.id ==  book.id%}
+            <p>Rating: {{ i.rating }}</p>    
+            <p>{{ i.review_user.name }} says: {{ i.review }}</p>
+            <form action="/delete_review/{{i.id}}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Delete">
+                <input type="hidden" name="review_id" value="{{i.id}}">
+            </form>
+            {% endif %}
+        {% endfor %}
+    </h3>
+
+    <h3>Add a Review:</h3>
+    <form action="/process_review/{{book.id}}" method="post">
+        {% csrf_token %}
+        <textarea name="review" cols="30" rows="10"></textarea>
+        <label for="rating">Rating: </label>
+        <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option> stars.
+            <input type="submit" value="Submit Review">
+            <input type="hidden" name="reviewer_id" value="{{request.session.id}}">
+            <input type="hidden" name="book_id" value="{{book.id}}">
+        </select>
+    </form>
+    
+</body>
+</html>

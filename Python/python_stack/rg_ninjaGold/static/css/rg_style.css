@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* .container {
+    background-color: blue;
+} */
+.header {
+    padding: 20px;
+}
+.area_container {
+    margin: 20px;
+    text-align: center;
+}

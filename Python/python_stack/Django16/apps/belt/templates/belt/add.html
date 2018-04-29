@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Book and Review</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <a href="/logout">Logout</a>
+    <h3>Add a New Book Title and a Review</h3>
+
+    <form action="/process_book" method="post">
+        {% csrf_token %}
+        <label for="title">Book Title:</label>
+        <input type="text" name="title">
+        <p>Author: </p>
+        <label for="author">Choose from the list: </label>
+        <select name="author">
+            <option value="j.k.rowliing">J.K. Rowling</option>
+            <option value="ian_flemming">Ian Flemming</option>
+            <option value="jane_austen">Jane Austen</option>
+            <option value="kate_chopin">Kate Chopin</option>
+            <option value="marty_robbins">Marty Robbins</option>
+        </select>
+        <label for="add_author">Or add a new author: </label>
+        <input type="text" name="add_author">
+        <label for="review">Review: </label>
+        <textarea name="review" cols="30" rows="10"></textarea>
+        Rating: <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        <input type="hidden" name="uploader_id" value="{{request.session.id}}">
+        <input type="submit" value="Add Book and Review">
+        </select>
+    </form>
+
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Counter</title>
+</head>
+<body>
+
+    <form action="/" name="form_a">
+        <input type="hidden" name="count" value="one">
+        <input type="submit" value="button" name="button">
+    </form>
+
+    <!-- <form action="/" name="form_b">
+        <input type="hideden" name="reset" value="two">
+        <input type="submit" name="reset_button" value="reset_button">
+    </form> -->
+
+    <form action="/reset">
+        <input type="submit" name="reset_button" value="reset">
+    </form>
+
+    
+
+    Counter
+    <p>{{ count }} times</p>
+</body>
+</html>

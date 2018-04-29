@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>wall.html</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h3>CodingDojo Wall</h3>
+            <h5>Welcome {{ name }}</h5>
+            <a href="/logout">log off</a>
+        </div>
+        <div class="post_message_container">
+
+            <h3>Post a Message</h3>
+            <form action="/process_message" method="post">
+            
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <input type="submit" name="message_submit" value="Post a message">
+            
+            </form>
+
+        </div>
+        <div class="display_message_container">
+
+            <table>
+                <thead></thead>
+                <tbody>
+                    {% for i in post %}
+                    <tr>
+                        <td>{{ i.msg_first_name }} - {{ i.msg_last_name }} </td>
+                        <td>message: {{ i.msg_message}}</td>
+                        <td>message id: {{ i.msg_id }}</td>
+                        
+
+                        {% for j in comment %}
+                            {% if i.msg_id == j.cmt_msg_id %}
+                                <td>comment: {{ j.cmt_comment }}</td>
+                            {% endif %}
+
+                        {% endfor %}
+
+                        <td>
+                            <h4>Post a Comment</h4>
+                            <form action="/comment" method="post">
+                                <textarea name="comment" id="comment" cols="50" rows="5"></textarea>
+                                <input type="submit" name="submit_comment" value="Post a Comment">
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>

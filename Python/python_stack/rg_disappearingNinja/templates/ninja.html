@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ninjas</title>
+</head>
+<body>
+    <!-- <img src="{{url_for('static', filename = 'img/tmnt.png' ) }}" alt="ninjas"> -->
+    <p>{{ pic }}</p>
+    <!-- <img src="{{url_for('static', filename = 'img/" + "{{ pic }}" + ".jpg')}}" alt="ninjas">  -->
+    <img src="../static/img/{{pic}}" alt="ninjas">
+</body>
+</html>

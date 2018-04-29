@@ -1,0 +1,383 @@
+(djangoEnv) Roberts-MacBook-Air:python_stack robertgormley$ django-admin startproject Django9
+cd (djangoEnv) Roberts-MacBook-Air:python_stack robertgormley$ cd Django9
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ mkdir apps
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ cd apps
+(djangoEnv) Roberts-MacBook-Air:apps robertgormley$ touch __init__.py
+(djangoEnv) Roberts-MacBook-Air:apps robertgormley$ python ../manage.py startapp books_authors
+(djangoEnv) Roberts-MacBook-Air:apps robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django9/apps
+(djangoEnv) Roberts-MacBook-Air:apps robertgormley$ cd ..
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django9
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ python manage.py makemigrations
+Migrations for 'books_authors':
+  apps/books_authors/migrations/0001_initial.py:
+    - Create model Author
+    - Create model Book
+    - Add field books to author
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, books_authors, contenttypes, sessions
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying books_authors.0001_initial... OK
+  Applying sessions.0001_initial... OK
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ python manage.py shell
+Python 2.7.14 (default, Jan  6 2018, 12:12:40) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.books_authors.models import *
+>>> Book.objects.create(name="C sharp", desc="tomato")
+<Book: Book object>
+>>> Book.objects.create(name="Java", desc="banana")
+<Book: Book object>
+>>> Book.objects.create(name="Python", desc="snake")
+<Book: Book object>
+>>> Book.objects.create(name="PHP", desc="monkey")
+<Book: Book object>
+>>> Book.objects.create(name="Ruby", desc="gemstein")
+<Book: Book object>
+>>> Author.object.create(fname="Mike")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'Author' has no attribute 'object'
+>>> Author.objects.create(fname="Mike")
+<Author: Author object>
+>>> Author.objects.create(fname="Speros")
+<Author: Author object>
+>>> Author.objects.create(fname="John")
+<Author: Author object>
+>>> Author.objects.create(fname="Jadee")
+<Author: Author object>
+>>> Author.objects.create(fname="Jay")
+<Author: Author object>
+>>> quit()
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django9
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ python manage.py makemigrations
+You are trying to add a non-nullable field 'notes' to author without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 2
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ python manage.py makemigrations
+Migrations for 'books_authors':
+  apps/books_authors/migrations/0002_author_notes.py:
+    - Add field notes to author
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django9
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ python manage.py shell
+Python 2.7.14 (default, Jan  6 2018, 12:12:40) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.{{app_name}}.models import *
+  File "<console>", line 1
+    from apps.{{app_name}}.models import *
+              ^
+SyntaxError: invalid syntax
+>>> from apps.books_authors.models import *
+>>> quit()
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django9
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ cd ..
+(djangoEnv) Roberts-MacBook-Air:python_stack robertgormley$ ls
+Dang07			FlaskDebugQuiz		rg_disappearingNinja
+Django0			MySQL_Assignments	rg_dojoSurvey
+Django1			flask_MySQL		rg_landing_page
+Django2			flask_fundamentals	rg_ninjaGold
+Django3			flask_hello_world	rg_numberGame
+Django4			myEnvironments		rg_portfolio
+Django5			ninjaGoldDebug		rg_regform
+Django6			python_OOP		rg_server
+Django8			python_fundamentals	rg_valid1
+Django9			rg_cards		rg_whatsmyname
+Django_Projects		rg_counter
+(djangoEnv) Roberts-MacBook-Air:python_stack robertgormley$ cd ninjaGoldDebug/
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ ls
+README.md	apps		db.sqlite3	manage.py	ninjaGold
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/ninjaGoldDebug
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 21, 2018 - 10:21:39
+Django version 1.10, using settings 'ninjaGold.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[21/Feb/2018 10:21:49] "GET / HTTP/1.1" 200 3535
+[21/Feb/2018 10:21:49] "GET /static/goldGame/css/styles.css HTTP/1.1" 200 237
+in process route
+buildings is:  {'farm': [10, 20], 'house': [2, 5], 'cave': [5, 10], 'casino': [-50, 50]}
+request.method is:  POST
+building is now:  farm
+randomNum is:  16
+request.session['totalgold'] is:  16
+[21/Feb/2018 10:21:51] "POST /process_money HTTP/1.1" 302 0
+[21/Feb/2018 10:21:51] "GET / HTTP/1.1" 200 3694
+in process route
+buildings is:  {'farm': [10, 20], 'house': [2, 5], 'cave': [5, 10], 'casino': [-50, 50]}
+request.method is:  POST
+building is now:  farm
+randomNum is:  16
+request.session['totalgold'] is:  32
+[21/Feb/2018 10:21:52] "POST /process_money HTTP/1.1" 302 0
+[21/Feb/2018 10:21:52] "GET / HTTP/1.1" 200 3852
+in process route
+buildings is:  {'farm': [10, 20], 'house': [2, 5], 'cave': [5, 10], 'casino': [-50, 50]}
+request.method is:  POST
+building is now:  farm
+randomNum is:  16
+request.session['totalgold'] is:  48
+[21/Feb/2018 10:21:52] "POST /process_money HTTP/1.1" 302 0
+[21/Feb/2018 10:21:52] "GET / HTTP/1.1" 200 4010
+in process route
+buildings is:  {'farm': [10, 20], 'house': [2, 5], 'cave': [5, 10], 'casino': [-50, 50]}
+request.method is:  POST
+building is now:  farm
+randomNum is:  16
+request.session['totalgold'] is:  64
+[21/Feb/2018 10:21:53] "POST /process_money HTTP/1.1" 302 0
+[21/Feb/2018 10:21:53] "GET / HTTP/1.1" 200 4168
+in process route
+buildings is:  {'farm': [10, 20], 'house': [2, 5], 'cave': [5, 10], 'casino': [-50, 50]}
+request.method is:  POST
+building is now:  farm
+randomNum is:  10
+request.session['totalgold'] is:  74
+[21/Feb/2018 10:21:53] "POST /process_money HTTP/1.1" 302 0
+[21/Feb/2018 10:21:53] "GET / HTTP/1.1" 200 4326
+[21/Feb/2018 10:21:54] "POST /reset HTTP/1.1" 302 0
+[21/Feb/2018 10:21:54] "GET / HTTP/1.1" 200 3535
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 21, 2018 - 10:22:06
+Django version 1.10, using settings 'ninjaGold.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 21, 2018 - 10:22:42
+Django version 1.10, using settings 'ninjaGold.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+^C(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/ninjaGoldDebug
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   apps/goldGame/.DS_Store
+	modified:   apps/goldGame/views.py
+	modified:   db.sqlite3
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	apps/goldGame/static/.DS_Store
+	apps/goldGame/static/goldGame/.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   apps/goldGame/.DS_Store
+	modified:   apps/goldGame/views.py
+	modified:   db.sqlite3
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	apps/goldGame/static/.DS_Store
+	apps/goldGame/static/goldGame/.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ git add .
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ git commit -m "completed ninja gold quiz"
+[master 5cc9e1b] completed ninja gold quiz
+ 5 files changed, 3 insertions(+), 2 deletions(-)
+ create mode 100644 apps/goldGame/static/.DS_Store
+ create mode 100644 apps/goldGame/static/goldGame/.DS_Store
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ git push
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (10/10), 1.41 KiB | 0 bytes/s, done.
+Total 10 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 6 local objects.
+To https://github.com/rgormley5/ninjaGoldDebug.git
+   48e04ce..5cc9e1b  master -> master
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/ninjaGoldDebug
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ c d..
+-bash: c: command not found
+(djangoEnv) Roberts-MacBook-Air:ninjaGoldDebug robertgormley$ cd ..
+(djangoEnv) Roberts-MacBook-Air:python_stack robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack
+(djangoEnv) Roberts-MacBook-Air:python_stack robertgormley$ ls
+Dang07			FlaskDebugQuiz		rg_disappearingNinja
+Django0			MySQL_Assignments	rg_dojoSurvey
+Django1			flask_MySQL		rg_landing_page
+Django2			flask_fundamentals	rg_ninjaGold
+Django3			flask_hello_world	rg_numberGame
+Django4			myEnvironments		rg_portfolio
+Django5			ninjaGoldDebug		rg_regform
+Django6			python_OOP		rg_server
+Django8			python_fundamentals	rg_valid1
+Django9			rg_cards		rg_whatsmyname
+Django_Projects		rg_counter
+(djangoEnv) Roberts-MacBook-Air:python_stack robertgormley$ cd Django9
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ python manage.py shell
+Python 2.7.14 (default, Jan  6 2018, 12:12:40) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.{{app_name}}.models import *
+  File "<console>", line 1
+    from apps.{{app_name}}.models import *
+              ^
+SyntaxError: invalid syntax
+>>> from apps.books_authors.models import *
+>>> a = Book.objects.last()
+>>> a.name="C#"
+>>> a.save()
+>>> a = Author.objects.last()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 563, in last
+    objects = list((self.reverse() if self.ordered else self.order_by('-pk'))[:1])
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 256, in __iter__
+    self._fetch_all()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 1085, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 835, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such column: books_authors_author.notes
+>>> a = Author.objects.last()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 563, in last
+    objects = list((self.reverse() if self.ordered else self.order_by('-pk'))[:1])
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 256, in __iter__
+    self._fetch_all()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 1085, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 835, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such column: books_authors_author.notes
+>>> b = Author.objects.last()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 563, in last
+    objects = list((self.reverse() if self.ordered else self.order_by('-pk'))[:1])
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 256, in __iter__
+    self._fetch_all()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 1085, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 835, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such column: books_authors_author.notes
+>>> 
+KeyboardInterrupt
+>>> quit()
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django9
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ python manage.py makemigrations
+No changes detected
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, books_authors, contenttypes, sessions
+Running migrations:
+  Rendering model states... DONE
+  Applying books_authors.0002_author_notes... OK
+(djangoEnv) Roberts-MacBook-Air:Django9 robertgormley$ python manage.py shell
+Python 2.7.14 (default, Jan  6 2018, 12:12:40) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.{{app_name}}.models import *
+  File "<console>", line 1
+    from apps.{{app_name}}.models import *
+              ^
+SyntaxError: invalid syntax
+>>> from apps.books_authors.models import *
+>>> Author.objects.last()
+<Author: Author object>
+>>> a = Author.objects.last()
+>>> c = Author.objects.first()
+>>> c.fname="Ketul"
+>>> Author.objects.first()
+<Author: Author object>
+>>> Author.objects.first().books.add(Book.objects.first())
+>>> Author.objects.first().books.add(Book.objects.second())
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'second'

@@ -1,0 +1,160 @@
+(djangoEnv) Roberts-MacBook-Air:python_stack robertgormley$ django-admin startproject Django10
+(djangoEnv) Roberts-MacBook-Air:python_stack robertgormley$ cd Django10
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ mkdir apps
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ cd apps
+(djangoEnv) Roberts-MacBook-Air:apps robertgormley$ touch __init__.py
+(djangoEnv) Roberts-MacBook-Air:apps robertgormley$ python ../manage.py startapp likes_books
+(djangoEnv) Roberts-MacBook-Air:apps robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10/apps
+(djangoEnv) Roberts-MacBook-Air:apps robertgormley$ cd ..
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/core/management/__init__.py", line 367, in execute_from_command_line
+    utility.execute()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/core/management/__init__.py", line 341, in execute
+    django.setup()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/apps/config.py", line 199, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/local/Cellar/python/2.7.14_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10/apps/likes_books/models.py", line 6, in <module>
+    class User(models.Model):
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10/apps/likes_books/models.py", line 12, in User
+    uploaded_books = models.ForeignKey(Books, related_name = "uploaded_by_id")
+NameError: name 'Books' is not defined
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/core/management/__init__.py", line 367, in execute_from_command_line
+    utility.execute()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/core/management/__init__.py", line 341, in execute
+    django.setup()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/apps/config.py", line 199, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/local/Cellar/python/2.7.14_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10/apps/likes_books/models.py", line 6, in <module>
+    class User(models.Model):
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10/apps/likes_books/models.py", line 12, in User
+    uploaded_books = models.ForeignKey(Book, related_name = "uploaded_by_id")
+NameError: name 'Book' is not defined
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/core/management/__init__.py", line 367, in execute_from_command_line
+    utility.execute()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/core/management/__init__.py", line 341, in execute
+    django.setup()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/apps/config.py", line 199, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/local/Cellar/python/2.7.14_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10/apps/likes_books/models.py", line 6, in <module>
+    class Book(models.Model):
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10/apps/likes_books/models.py", line 11, in Book
+    uploader = models.ForeignKey(User, related_name = "uploaded_by_id")
+NameError: name 'User' is not defined
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/core/management/__init__.py", line 367, in execute_from_command_line
+    utility.execute()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/core/management/__init__.py", line 341, in execute
+    django.setup()
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/apps/config.py", line 199, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/local/Cellar/python/2.7.14_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10/apps/likes_books/models.py", line 15, in <module>
+    class Book(models.Model):
+  File "/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10/apps/likes_books/models.py", line 21, in Book
+    liked_users = models.ManyToManyField(related_name = "likes")
+TypeError: __init__() takes at least 2 arguments (2 given)
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ python manage.py makemigrations
+Migrations for 'likes_books':
+  apps/likes_books/migrations/0001_initial.py:
+    - Create model Book
+    - Create model User
+    - Add field liked_users to book
+    - Add field uploader to book
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, likes_books, sessions
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying likes_books.0001_initial... OK
+  Applying sessions.0001_initial... OK
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ python manage.py shell
+Python 2.7.14 (default, Jan  6 2018, 12:12:40) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.{{app_name}}.models import *
+  File "<console>", line 1
+    from apps.{{app_name}}.models import *
+              ^
+SyntaxError: invalid syntax
+>>> from apps.likes_books.models import *
+>>> User.objects.create(fname="Harry")
+<User: User object>
+>>> User.objects.create(fname="Hermione")
+<User: User object>
+>>> User.objects.create(fname="Ron")
+<User: User object>
+>>> book_a = Book.objects.create(name="Deathly Hallows Part 1", uploader=User.objects.get(id=1))
+>>> book_a = Book.objects.create(name="Deathly Hallows Part 2", uploader=User.objects.get(id=1))
+>>> book_a = Book.objects.create(name="Half Blood Prince", uploader=User.objects.get(id=2)) 
+>>> book_a = Book.objects.create(name="Goblet of Fire", uploader=User.objects.get(id=2))
+>>> book_a = Book.objects.create(name="Prisoner of Azkaban", uploader=User.objects.get(id=3))
+>>> book_a = Book.objects.create(name="Chamber of Secrets", uploader=User.objects.get(id=3))
+>>> Book.objects.first().liked_users
+<django.db.models.fields.related_descriptors.ManyRelatedManager object at 0x105e99f90>
+>>> Book.objects.first().liked_users.add(User.objects.first())
+>>> Book.objects.first().liked_users.add(User.objects.get(id=2))
+>>> Books.objects.last().liked_users.add(User.objects.get(id=2))
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Books' is not defined
+>>> Book.objects.last().liked_users.add(User.objects.get(id=2))
+>>> quit()
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ pwd
+/Users/robertgormley/Desktop/DojoAssignments/Python/python_stack/Django10
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ touch hw.txt
+(djangoEnv) Roberts-MacBook-Air:Django10 robertgormley$ 

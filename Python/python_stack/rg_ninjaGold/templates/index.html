@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ninja Money</title>
+    
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/rg_style.css')}}">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <p class="gold_text">Your Gold</p>
+            <div class="gold_display">
+                {{ number_html }}
+            </div>
+        </div>
+        <div class="area_container">
+            <div class="area">
+                <h3>Farm</h3>
+                <p>(earns 10-20 gold)</p>
+                <form action="/process_money" method="post">
+                    <input class="find_gold_button" type="submit" name="action" value="farm_input">
+                </form>
+            </div>
+            <div class="area">
+                <h3>Cave</h3>
+                <p>(earns 5-10 gold)</p>
+                <form action="/process_money" method="post">
+                    <input class="find_gold_button" type="submit" name="action" value="cave_input">
+                </form>
+            </div>
+            <div class="area">
+                <h3>House</h3>
+                <p>(earns 2-5 gold)</p>
+                <form action="/process_money" method="post">
+                    <input class="find_gold_button" type="submit" name="action" value="house_input">
+                </form>       
+            </div>
+            <div class="area">
+                <h3>Casino</h3>
+                <p>(earns 0-50 gold)</p>
+                <form action="/process_money" method="post">
+                    <input class="find_gold_button" type="submit" name="action" value="casino_input">
+                </form>
+            </div>
+        </div>
+        <div class="activity_container">
+
+            {% if "number" in session %}
+                {% for i in session['text']%}
+                    <p>{{ text_html }}</p>
+                {% endfor %}
+            {% endif %}
+
+
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

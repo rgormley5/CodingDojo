@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dojo Survey Index</title>
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p> {{ message}} </p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="/process" method="post">Form
+        Name: <input type="text" name="name">
+        <select name="dojo_location" id="dojo_location">Dojo Location
+            <option value="San_Jose">San Jose</option>
+            <option value="Berkeley">Berkeley</option>
+            <option value="Seattle">Seattle</option>
+        </select>
+        <select name="language" id="language">Favorite Language
+            <option value="Python">Python</option>
+            <option value="Javascript">JavaScript</option>
+            <option value="German">German</option>
+        </select>
+        <p>Comment below:</p>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        <input type="submit" name="button" value="button">
+    </form>
+</body>
+</html>

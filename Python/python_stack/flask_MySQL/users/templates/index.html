@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users Index</title>
+</head>
+<body>
+    
+    <h2>Users</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>email</td>
+                <td>created At</td>
+                <td>actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in all_friends %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.created_at }}</td>
+                <td>
+                    <a href="/users/{{i.id}}">Show</a>
+                    <a href="/users/{{i.id}}/edit">Edit</a>
+                    <a href="/users/{{i.id}}/destroy">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/users/new">Add a new user</a>
+
+</body>
+</html>

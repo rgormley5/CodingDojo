@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Success</title>
+</head>
+<body>
+    
+    <h2>Success Page</h2>
+
+    <h3>ALL EMAILS</h3>
+    {{ all_emails }}
+
+    <table>
+        <thead>
+            <tr>Email Addresses Entered</tr>
+        </thead>
+        <tbody>
+            {% for x in all_emails %}
+                <tr>
+                    <td>{{ x['value'] }}</td>
+                    <td>{{ x['created_at'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <form action="/delete" method="post">
+        Delete an Email: <input type="text" name="delete_value">
+        <input type="submit" name="delete_button" value="delete">
+    </form>
+
+
+
+
+</body>
+</html>

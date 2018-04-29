@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Book and Review</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <a href="/logout">Logout</a>
+
+    <h2>Add a New Book Title and a Review</h2>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li style="color:red" {% if message.tags %} class="{{ message.tags }}" {% endif %} > {{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form action="/books/process_book" method="post">
+        {% csrf_token %}
+        Book Title: <input type="text" name="title">
+        Author: 
+        Choose from the list:<select name="author">
+            <option value="j.k.rowling">J.K. Rowling</option>
+            <option value="ian_flemming">Ian Flemming</option>
+        </select>
+        Or add a new author: <input type="text" name="add_author">
+        Review: <textarea name="review" cols="30" rows="10"></textarea>
+        Rating: <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <input type="hidden" name="uploader_id" value="{{request.session.id}}">
+        <input type="submit" value="Add Book and Review">
+    </form>
+    
+</body>
+</html>

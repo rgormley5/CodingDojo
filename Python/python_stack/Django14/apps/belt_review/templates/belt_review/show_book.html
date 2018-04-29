@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Book and Review</title>
+</head>
+<body>
+    
+    <h2> {{ book.title }} </h2>
+    <p>Author: {{ book.author }} </p>
+    <a href="/books">Home</a>
+    <a href="/logout">Logout</a>
+
+    <h3>Reviews:</h3>
+
+        {% for i in all_review %}
+            {% if i.book.id == book.id %}
+                <p>Rating: {{ i.rating }}</p>
+                <p> <a href="/display_user/{{ i.review_user.id }}">{{ i.review_user.alias }}</a>says: {{ i.review }} </p>
+                <p>{{ i.book.title }}</p>
+                <p>{{i.created_at}}</p>
+            {% endif %}
+        {% endfor %}
+
+    <h3>Add a Review:</h3>
+    <form action="/add_review/{{book.id}}" method="post">
+        {% csrf_token %}
+        <textarea name="add_review" cols="30" rows="10"></textarea>
+        Rating: <select name="add_rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select> stars.
+        <input type="submit" value="Submit Review">
+    </form>
+
+</body>
+</html>
